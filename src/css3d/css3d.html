@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>css 3d</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .square {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      margin: 200px auto;
+      /* 视图位置，近大远小，设置后可查看 3d 效果 */
+      /* perspective: 400px; */
+      /* 视图基点，观察角度 */
+      /* perspective-origin: -30% -30%; */
+      transform: rotateX(30deg) rotateY(30deg);
+      /* 3d 变换 */
+      transform-style: preserve-3d;
+      /* transition: all 1s ease; */
+      /* animation: rotateSquare 4s ease infinite; */
+    }
+    @keyframes rotateSquare {
+      0% {
+        transform: rotateX(-30deg) rotateY(-30deg);
+      }
+      50% {
+        transform: rotateX(-360deg) rotateY(-360deg);
+      }
+      100% {
+        transform: rotateX(-30deg) rotateY(-30deg);
+      }
+    }
+    .plane {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: pink;
+      text-align: center;
+      line-height: 200px;
+      box-sizing: border-box;
+      opacity: 0.5;
+    }
+    /* translate 需要在 rotate 前，否则坐标轴也会 rotate 不好定位哪根轴 */
+    .plane1 {
+      transform: translateZ(100px) rotateY(0deg);
+      background: red;
+    }
+    .plane2 {
+      transform: translateX(100px) rotateY(90deg);
+      background: blue;
+    }
+    .plane3 {
+      transform: translateZ(-100px) rotateY(180deg);
+      background: green;
+    }
+    .plane4 {
+      transform: translateX(-100px) rotateY(270deg);
+      background: pink;
+    }
+    .plane5 {
+      transform: translateY(-100px) rotateX(90deg);
+      background: yellow;
+    }
+    .plane6 {
+      transform: translateY(100px) rotateX(-90deg);
+      background: chocolate;
+    }
+  </style>
+</head>
+<body>
+  <div class="square">
+    <div class="plane plane1">1</div>
+    <div class="plane plane2">2</div>
+    <div class="plane plane3">3</div>
+    <div class="plane plane4">4</div>
+    <div class="plane plane5">5</div>
+    <div class="plane plane6">6</div>
+  </div>
+</body>
+</html>
