@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>双飞翼布局</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+    }
+    .middle {
+      background: pink;
+      flex: 1;
+    }
+    .left {
+      width: 200px;
+      background: red;
+      order: -1;
+    }
+    .right {
+      width: 400px;
+      background: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- middle 需要最先渲染 -->
+    <div class="middle">middle</div>
+    <div class="left">left
+      <p>line2</p>
+    </div>
+    <div class="right">right</div>
+  </div>
+</body>
+</html>
