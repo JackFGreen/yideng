@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BFC</title>
+  <style>
+    .box1 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      float: left;
+    }
+    .box2 {
+      height: 200px;
+      background: blue;
+      /* 左侧固定，右侧自适应 - BFC 之间不会重叠 */
+      overflow: hidden;
+      /* 清除浮动 - BFC 让内部元素参与计算 */
+      /* 防止 margin 垂直重叠 -  */
+    }
+  </style>
+</head>
+<body>
+  <div class="box1">box1</div>
+  <div class="box2">box2
+      <p>自适应内容</p>
+  </div>
+</body>
+</html>
