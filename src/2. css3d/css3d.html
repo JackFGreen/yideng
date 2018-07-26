@@ -14,7 +14,7 @@
       /* 视图位置，近大远小，设置后可查看 3d 效果 */
       /* perspective: 400px; */
       /* 视图基点，观察角度 */
-      /* perspective-origin: -30% -30%; */
+      perspective-origin: -100px -100px;
       transform: rotateX(30deg) rotateY(30deg);
       /* 3d 变换 */
       transform-style: preserve-3d;
@@ -41,8 +41,8 @@
       background: pink;
       text-align: center;
       line-height: 200px;
-      box-sizing: border-box;
-      opacity: 0.5;
+      /* opacity: 0.5; */
+      backface-visibility: hidden;
     }
     /* translate 需要在 rotate 前，否则坐标轴也会 rotate 不好定位哪根轴 */
     .plane1 {
