@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Car(color) {
+      this.color = color
+    }
+    Car.prototype.setColor = newColor => {
+      this.color = newColor
+    }
+
+    function ChildCar(color) {
+      Car.call(this, color)
+    }
+    ChildCar.prototype = Object.create(Car.prototype)
+    ChildCar.prototype.constructor = ChildCar
+
+    ChildCar.prototype.setChildColor = newColor => {
+      this.color = newColor
+    }
+
+    const myCar = new Car('red')
+    console.log(myCar)
+    console.log(myCar.constructor)
+
+    const myChildCar = new ChildCar('green')
+    console.log(myChildCar)
+    console.log(myChildCar.constructor)
+  </script>
+</body>
+</html>
