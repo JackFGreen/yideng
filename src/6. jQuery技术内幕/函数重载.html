@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>函数重载</title>
+</head>
+<body>
+  <script>
+    function addMethod(obj, name, f) {
+      var old = obj[name]
+      obj[name] = function () {
+        if (f.length === arguments.length) {
+          return f.apply(this, arguments)
+        } else {
+          return old.apply(this, arguments)
+        }
+      }
+    }
+    var p = {
+      name: ['First', 'Second', 'Last']
+    }
+
+    function find () {
+      return this.name
+    }
+    function findName (name) {
+      for (let i = 0; i < this.name.length; i++) {
+        if (name === this.name[i]) {
+          return name
+        }
+      }
+    }
+
+    addMethod(p, 'find', find)
+    console.log(p.find())
+
+    addMethod(p, 'find', findName)
+    console.log(p.find('First'))
+  </script>
+</body>
+</html>
