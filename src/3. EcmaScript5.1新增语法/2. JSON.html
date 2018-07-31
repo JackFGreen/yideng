@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JSON</title>
+</head>
+
+<body>
+  <script>
+  'use strict';
+
+  // var result = JSON.parse('{"a": 1, "b": "2"}', function(key, value) {
+  //   if (typeof value == 'string') {
+  //     // return parseInt(value);
+  //     // return undefined;
+  //   } else {
+  //     return value;
+  //   }
+  // })
+  // console.log(result)
+
+  var nums = {
+    "first": 7,
+    "second": 14,
+    "third": 13
+  }
+
+  var luckyNums = JSON.stringify(nums, function(key, value) {
+    if (value == 13) {
+      return undefined;
+    } else {
+      return value;
+    }
+  }, 2); // 格式化缩进 2 空格
+  console.log(luckyNums)
+  </script>
+</body>
+
+</html>
