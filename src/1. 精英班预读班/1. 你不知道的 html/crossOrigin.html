@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>crossOrigin</title>
+</head>
+<body>
+  <img src="https://www.baidu.com/img/baidu_jgylogo3.gif" alt="">
+
+  <script>
+    const img = new Image()
+    // 1016B
+    const src = 'https://www.baidu.com/img/baidu_jgylogo3.gif'
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
+
+    // img.crossOrigin = 'Anonymous'
+    img.src = src
+
+    const start = Date.now()
+
+    img.onload = () => {
+      const end = Date.now()
+      const speed = 1016 / 1024 / ((end - start) / 1000)
+      console.log(speed)
+
+      canvas.width = img.width
+      canvas.height = img.height
+      ctx.drawImage(img, 0, 0)
+      // toDataURL 需要开启 crossOrigin
+      localStorage.setItem('saveImgData', canvas.toDataURL('image/gif'))
+    }
+    // 数据统计
+    // navigator.sendBeacon()
+    // Math.random() * 10 < 5 节流
+    // img.src = 'a.php?user=a&id=b'
+  </script>
+</body>
+</html>
