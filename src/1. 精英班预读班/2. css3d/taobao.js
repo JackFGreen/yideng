@@ -17,34 +17,35 @@ while (n < count + 1) {
 
   const rotateDeg = n * deg
   const moveR = r + 50
-  box.style.transform = `translateX(-50%) rotateY(-${rotateDeg}deg) translateZ(-${moveR}px)`
+  box.style.transform = `translate(-50%, -50%) rotateY(-${rotateDeg}deg) translateZ(-${moveR}px)`
   frag.appendChild(box)
   n++
 }
 
 boxWrap.appendChild(frag)
 
-// let start = 0
-// let currDeg = 0
-// document.addEventListener('touchstart', e => {
-//   e.preventDefault
-//   const touch = e.targetTouches[0]
-//   start = touch.clientX
-// }, false)
+let startX = 0
+let currX = 0
+let lastX = 0
+let diffX = 0
+document.addEventListener('touchstart', e => {
+  e.preventDefault
+  const touch = e.targetTouches[0]
+  startX = touch.clientX
+}, false)
 
-// document.addEventListener('touchmove', e => {
-//   e.preventDefault
-//   const touch = e.targetTouches[0]
-//   const mvX = touch.clientX
-//   const diff = mvX - start
-//   console.log(mvX)
+document.addEventListener('touchmove', e => {
+  e.preventDefault
+  const touch = e.targetTouches[0]
+  const mvX = touch.clientX
 
-//   currDeg = currDeg + mvX / l * 360
-//   boxWrap.style.transform = `rotateY(${currDeg}deg)`
-// }, false)
+  diffX = mvX - startX
+  currX = lastX + diffX
 
-// document.addEventListener('touchend', e => {
-//   e.preventDefault
-//   const touch = e.changedTouches[0]
-//   console.log(touch.clientX)
-// }, false)
+  boxWrap.style.transform = `rotateY(${currX * 360 / l}deg)`
+}, false)
+
+document.addEventListener('touchend', e => {
+  e.preventDefault
+  lastX = currX
+}, false)
