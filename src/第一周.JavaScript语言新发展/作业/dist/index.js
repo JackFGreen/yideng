@@ -1,41 +1,30 @@
 'use strict';
 
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+var _praise = require('./praise.js');
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+var _praise2 = _interopRequireDefault(_praise);
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+var _jquery = require('../../../../lib/jquery/dist/jquery.js');
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+var _jquery2 = _interopRequireDefault(_jquery);
 
-var Skr = function () {
-  function Skr(user) {
-    _classCallCheck(this, Skr);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-    this.user = user;
-  }
+// const skr = new Thumb('skr')
+// skr.point()
+// skr.point()
 
-  _createClass(Skr, [{
-    key: 'point',
-    value: function point() {
-      console.log(this.user + ' skr!');
-    }
-  }]);
+// const skr = new Thumb('type')
+// $('.praise').click(() => {
+//   skr.point()
+// })
 
-  return Skr;
-}();
+_jquery2.default.fn.skr = function (type) {
+  console.log('jq', type);
+  var skr = new _praise2.default(type);
+  return (0, _jquery2.default)(this).click(function () {
+    skr.point();
+  });
+};
 
-var Finger = function (_Skr) {
-  _inherits(Finger, _Skr);
-
-  function Finger(finger) {
-    _classCallCheck(this, Finger);
-
-    return _possibleConstructorReturn(this, (Finger.__proto__ || Object.getPrototypeOf(Finger)).call(this, finger));
-  }
-
-  return Finger;
-}(Skr);
-
-var BigFinger = new Finger('BigFinger');
-BigFinger.point();
+(0, _jquery2.default)('.praise').skr('praise').css('color', 'red');
