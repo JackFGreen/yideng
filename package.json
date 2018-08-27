@@ -5,16 +5,24 @@
   "repository": "git@github.com:JackFGreen/yideng.git",
   "author": "JackFGreen <clcortana@163.com>",
   "license": "MIT",
+  "scripts": {
+    "babel": "babel src/第一周.JavaScript语言新发展/作业/js -d src/第一周.JavaScript语言新发展/作业/dist",
+    "yd01": "gulp yd01",
+    "unit": "karma start"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
     "gulp": "^3.9.1",
-    "gulp-connect": "^5.5.0"
-  },
-  "scripts": {
-    "babel": "babel src/第一周.JavaScript语言新发展/作业/js -d src/第一周.JavaScript语言新发展/作业/dist",
-    "yd01": "gulp yd01"
+    "gulp-connect": "^5.5.0",
+    "jasmine-core": "^3.2.1",
+    "karma": "^3.0.0",
+    "karma-babel-preprocessor": "^7.0.0",
+    "karma-coverage": "^1.1.2",
+    "karma-jasmine": "^1.1.2",
+    "karma-phantomjs-launcher": "^1.0.4"
   },
   "dependencies": {
     "jquery": "^3.3.1",
