@@ -28,6 +28,39 @@ class Either extends Functor {
 }
 Either.of = (left, right) => new Either(left, right)
 
+class Ap extends Functor {
+  ap (f) {
+    return Ap.of(this.val(f.val))
+  }
+}
+Ap.of = val => new Ap(val)
+
+class Monad extends Functor {
+  map (f) {
+    return Monad.of(f(this.val))
+  }
+  join () {
+    return this.val
+  }
+  flatMap (f) {
+    return this.map(f).join()
+  }
+}
+Monad.of = val => new Monad(val)
+
+class IO extends Monad {
+  map (f) {
+    return IO.of(f(this.val()))
+  }
+  flatMap (f) {
+    return super.flatMap(f)
+  }
+}
+IO.of = val => new IO(val)
+
 exports.Functor = Functor
 exports.Maybe = Maybe
 exports.Either = Either
+exports.Ap = Ap
+exports.Monad = Monad
+exports.IO = IO

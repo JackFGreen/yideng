@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>BFC</title>
   <style>
+    .wrap {
+      /* display: flex; */
+    }
     .box1 {
       width: 100px;
       height: 100px;
@@ -13,8 +16,10 @@
       float: left;
     }
     .box2 {
+      /* flex: 1; */
       height: 200px;
       background: blue;
+      /* margin-left: 100px; */
       /* 左侧固定，右侧自适应 - BFC 之间不会重叠 */
       overflow: hidden;
       /* 清除浮动 - BFC 让内部元素参与计算 */
@@ -23,9 +28,11 @@
   </style>
 </head>
 <body>
-  <div class="box1">box1</div>
-  <div class="box2">box2
-      <p>自适应内容</p>
+  <div class="wrap">
+    <div class="box1">box1</div>
+    <div class="box2">box2
+        <p>自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容</p>
+    </div>
   </div>
 </body>
 </html>
