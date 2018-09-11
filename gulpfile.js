@@ -8,4 +8,4 @@ gulp.task('webserver', () => {
   })
 })
 
-gulp.task('yd01', ['webserver'])
+gulp.task('default', ['webserver'])
