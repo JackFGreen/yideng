@@ -1,4 +1,8 @@
-module.exports = async (ctx, next) => {
+const home = require('koa-router')()
+
+home.get('/', index)
+
+async function index(ctx, next) {
   const req = ctx.request
   const querystring = req.querystring
   const query = req.query
@@ -11,3 +15,5 @@ module.exports = async (ctx, next) => {
     </ul>
   `
 }
+
+module.exports = home

@@ -6,7 +6,7 @@
   "author": "JackFGreen <clcortana@163.com>",
   "license": "MIT",
   "scripts": {
-    "babel": "babel src/第二周.大话NodeJS72般变化/作业/js -d src/第二周.大话NodeJS72般变化/作业/dist",
+    "babel": "babel src/第二周.大话NodeJS72般变化/作业/static/js -d src/第二周.大话NodeJS72般变化/作业/static/dist",
     "start": "gulp",
     "unit": "karma start"
   },
@@ -25,10 +25,12 @@
     "karma-phantomjs-launcher": "^1.0.4"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "ejs": "^2.6.1",
     "global": "^4.3.2",
     "jquery": "^3.3.1",
     "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
     "koa-static": "^5.0.0",
     "koa-views": "^6.1.4",
