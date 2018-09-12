@@ -10,16 +10,13 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    // frameworks: ['jasmine'],
-    frameworks: ['mocha'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      // './src/第一周.JavaScript语言新发展/作业/js/*.js',
-      // './src/第一周.JavaScript语言新发展/作业/unit/*.spec.js',
-      // './src/第二周.大话NodeJS72般变化/作业/controllers/*.js',
-      './src/第二周.大话NodeJS72般变化/作业/test/*.spec.js'
+      './src/第一周.JavaScript语言新发展/作业/js/*.js',
+      './src/第一周.JavaScript语言新发展/作业/unit/*.spec.js'
     ],
 
 
@@ -31,10 +28,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      // './src/第一周.JavaScript语言新发展/作业/js/*.js': ['babel', 'coverage'],
-      // './src/第一周.JavaScript语言新发展/作业/unit/*.spec.js': ['babel']
-      // './src/第二周.大话NodeJS72般变化/作业/controllers/*.js': ['babel', 'coverage'],
-      './src/第二周.大话NodeJS72般变化/作业/test/*.spec.js': ['babel']
+      './src/第一周.JavaScript语言新发展/作业/js/*.js': ['babel', 'coverage'],
+      './src/第一周.JavaScript语言新发展/作业/unit/*.spec.js': ['babel']
     },
 
     // test results reporter to use
