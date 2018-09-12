@@ -5,7 +5,7 @@ const router = require('./controllers')
 const bodyparser = require('koa-bodyparser')
 // const cors = require('koa2-cors')
 
-const app = new Koa()
+const app = module.exports = new Koa()
 
 // app.use(cors({
 //   origin: '*',
@@ -18,4 +18,6 @@ app.use(static(__dirname + '/static'))
 app.use(bodyparser())
 app.use(router.routes())
 
-app.listen(3000)
+if(!module.parent) {
+  app.listen(3000)
+}
