@@ -8,6 +8,7 @@
   "scripts": {
     "babel": "babel src/第二周.大话NodeJS72般变化/作业/static/js -d src/第二周.大话NodeJS72般变化/作业/static/dist",
     "start": "gulp",
+    "work2": "supervisor src/第二周.大话NodeJS72般变化/作业/app.js",
     "unit": "karma start",
     "e2e": "node src/第二周.大话NodeJS72般变化/作业/e2e/index.js"
   },
@@ -16,6 +17,7 @@
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-0": "^6.24.1",
+    "chromedriver": "^2.41.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.5.0",
     "jasmine-core": "^3.2.1",
