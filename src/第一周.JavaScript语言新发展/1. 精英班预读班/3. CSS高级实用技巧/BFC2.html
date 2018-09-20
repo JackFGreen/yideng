@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>BFC</title>
+  <style>
+    .wrap {
+      overflow: hidden;
+    }
+    .box1 {
+      height: 200px;
+      background: blue;
+      float: left;
+    }
+    .box2 {
+      width: 100px;
+      height: 300px;
+      background: red;
+      float: left;
+      margin-left: -100px;
+    }
+    .box3 {
+      height: 300px;
+      width: 100px;
+      background: green;
+      float: right;
+    }
+    .box4 {
+      background: pink;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">wrap
+    <div class="box1">box1
+      <p>自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容</p>
+    </div>
+    <div class="box2">box2</div>
+  </div>
+
+  <div class="wrap">wrap
+    <div class="box3">box3</div>
+    <div class="box4">box4
+      <p>自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容自适应内容</p>
+    </div>
+  </div>
+</body>
+</html>

@@ -20,6 +20,7 @@
     "chromedriver": "^2.41.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.5.0",
+    "ip": "^1.1.5",
     "jasmine-core": "^3.2.1",
     "karma": "^3.0.0",
     "karma-babel-preprocessor": "^7.0.0",
