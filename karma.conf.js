@@ -15,8 +15,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './src/第一周.JavaScript语言新发展/作业/js/*.js',
-      './src/第一周.JavaScript语言新发展/作业/unit/*.spec.js'
+      './src/01.JavaScript语言新发展/作业/js/*.js',
+      './src/01.JavaScript语言新发展/作业/unit/*.spec.js'
     ],
 
 
@@ -28,8 +28,8 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      './src/第一周.JavaScript语言新发展/作业/js/*.js': ['babel', 'coverage'],
-      './src/第一周.JavaScript语言新发展/作业/unit/*.spec.js': ['babel']
+      './src/01.JavaScript语言新发展/作业/js/*.js': ['babel', 'coverage'],
+      './src/01.JavaScript语言新发展/作业/unit/*.spec.js': ['babel']
     },
 
     // test results reporter to use
@@ -40,7 +40,7 @@ module.exports = function(config) {
     // optionally, configure the reporter
     coverageReporter: {
       type : 'html',
-      dir : './src/第一周.JavaScript语言新发展/作业/coverage/'
+      dir : './src/01.JavaScript语言新发展/作业/coverage/'
     },
 
     // web server port

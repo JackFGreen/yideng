@@ -6,13 +6,13 @@
   "author": "JackFGreen <clcortana@163.com>",
   "license": "MIT",
   "scripts": {
-    "babel": "babel src/第二周.大话NodeJS72般变化/作业/static/js -d src/第二周.大话NodeJS72般变化/作业/static/dist",
+    "babel": "babel src/02.大话NodeJS72般变化/作业/static/js -d src/02.大话NodeJS72般变化/作业/static/dist",
     "start": "gulp",
-    "work3": "supervisor src/第三周.前端工程化/作业/app.js",
+    "work3": "supervisor src/03.前端工程化/作业/app.js",
     "unit": "karma start",
-    "e2e": "node src/第二周.大话NodeJS72般变化/作业/e2e/index.js",
-    "dev": "node src/第三周.前端工程化/作业/build/webpack.dev.conf.js",
-    "build": "webpack --config src/第三周.前端工程化/作业/build/webpack.prod.conf.js"
+    "e2e": "node src/02.大话NodeJS72般变化/作业/e2e/index.js",
+    "dev": "node src/03.前端工程化/作业/build/webpack.dev.conf.js",
+    "build": "webpack --config src/03.前端工程化/作业/build/webpack.prod.conf.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
