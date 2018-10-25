@@ -28,6 +28,7 @@ let startX = 0
 let currX = 0
 let lastX = 0
 let diffX = 0
+// let flag = true
 document.addEventListener('touchstart', e => {
   e.preventDefault
   const touch = e.targetTouches[0]
@@ -35,6 +36,7 @@ document.addEventListener('touchstart', e => {
 }, false)
 
 document.addEventListener('touchmove', e => {
+  // if (!flag) return
   e.preventDefault
   const touch = e.targetTouches[0]
   const mvX = touch.clientX
@@ -42,10 +44,18 @@ document.addEventListener('touchmove', e => {
   diffX = mvX - startX
   currX = lastX + diffX
 
-  boxWrap.style.transform = `rotateY(${currX * 360 / l}deg)`
+  boxWrap.style.transform = `rotateY(${currX * -360 / l}deg)`
 }, false)
 
 document.addEventListener('touchend', e => {
   e.preventDefault
   lastX = currX
 }, false)
+
+// window.addEventListener('deviceorientation', e => {
+//   const gamma = e.gamma
+//   if (gamma > 1) {
+//     flag = false
+//     boxWrap.style.transform = `rotateY(${gamma}deg)`
+//   }
+// })
